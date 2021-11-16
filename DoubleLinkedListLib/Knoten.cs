@@ -3,16 +3,16 @@
 
     public class Knoten
 {
-    public Knoten? Vorgaenger { get; set; }
+    public Knoten Vorgaenger { get; set; }
 
-    public Knoten? Nachfolger { get; set; }
+    public Knoten Nachfolger { get; set; }
 
     public string Inhalt { get; set; }
 
     public Knoten()
     {
-        this.Vorgaenger = null;
-        this.Nachfolger = null;
+        this.Vorgaenger = null!;
+        this.Nachfolger = null!;
         this.Inhalt = "";
     }
     public Knoten(Knoten vorgaenger, Knoten nachfolger, String inhalt)

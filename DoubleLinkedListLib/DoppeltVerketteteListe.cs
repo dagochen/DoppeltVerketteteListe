@@ -13,9 +13,9 @@ public class DoppeltVerketteteListe : Liste
         Ende.Vorgaenger = Anfang;
     }
 
-    public int Anzahl { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public int Anzahl { get; set; } = 0;
 
-    public bool IstLeer => throw new NotImplementedException();
+    public bool IstLeer => true;
 
     public void EntferneElement(string element)
     {
@@ -29,7 +29,16 @@ public class DoppeltVerketteteListe : Liste
 
     public void Hinzufuegen(string element)
     {
-        throw new NotImplementedException();
+       
+        Knoten neuerKnoten = new Knoten();
+        neuerKnoten.Inhalt = element;
+        Anfang.Nachfolger = neuerKnoten;
+        neuerKnoten.Vorgaenger = Anfang;
+
+        neuerKnoten.Nachfolger = Ende;
+        Ende.Vorgaenger = neuerKnoten;
+
+        Anzahl++;
     }
 
     public void Hinzufuegen(string element, int position)
